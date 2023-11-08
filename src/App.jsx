@@ -1,12 +1,16 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { About, Contact, Home } from "./pages";
 function App() {
   return (
     <div>
-      <h1 className="bg-gradient-to-r from-indigo-400 to-pink-400 bg-clip-text text-8xl font-extrabold text-transparent">
-        We love tailwind 💙
-      </h1>
-      <p className="p-4 pl-2">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-      </p>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={ <Home></Home>}/>
+          <Route path="/about" element={ <About></About>}/>
+          <Route path="/contact" element={ <Contact></Contact>}/>
+          <Route path="*" element={Home}></Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
